@@ -1,0 +1,906 @@
+div.menu UL LI UL.menuHB LI {
+	padding-left: 10px;
+}
+
+.titreCartouche3 {
+	margin-bottom: 5px;
+	font-size: 120%;
+	color: #666666;
+	font-weight: bold;
+}
+
+.cpMonthNavigation {
+	text-align: center;
+}
+
+.vAlignMiddle {
+	vertical-align:middle;
+}
+
+/* --- Styles generaux ------------------------------------------------------ */
+body {
+	margin: 0;
+	font-family: arial;
+	color: #353535;
+	font-size: 11px;
+}
+table, td {
+	font-size: 100%;
+}
+a img {
+	border: 0;
+}
+
+form {
+	margin: 8px 0 8px 0;
+}
+
+#sousmenu {
+	margin: 8px 0 0 10px;
+	
+}
+
+#main {
+}
+
+a {
+	color: #353535;
+}
+
+/* --- Menu ----------------------------------------------------------------- */
+.menu ul {
+	margin: 5px 2px 0px 0px;
+	padding: 0 0 0 0px;
+	list-style-type: none;
+	list-style-image: none;
+	color: #434343;
+	font-weight: normal;
+}
+.menu ul li {
+	margin: 5px 0 5px 15px;
+	padding: 0 0 0 0px;
+	list-style-image: url('images/flecheBleue.png');
+	color: #434343;
+	font-weight: normal;
+}
+.menu ul li.select {
+	list-style-image: url('images/flecheRouge.png');
+	color: #A6394C;
+	font-weight: bold;
+}
+.menu ul li img {
+	position: relative;
+	top: 1px;
+}
+.menu ul li a {
+	text-decoration: none;
+	color: #434343;
+}
+.menu ul li a:hover {
+	text-decoration: underline;
+}
+.menu ul li a.select{
+	text-decoration: none;
+	color: #A6394C;
+}
+
+/* --- Contenu -------------------------------------------------------------- */
+div.page {
+	padding: 8px;
+	margin: 0 auto;
+}
+
+DIV.info3 {
+	margin: 25px 0 25px 0;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	color: #323232;
+}
+
+/* Formulaire standard */
+DIV.formulaire1 {
+	margin: 10px auto;
+	width:100%;
+	padding: 10px 0;
+	background-color: #f5f5f5;
+}
+DIV.formulaire1 TABLE {
+	width: auto;
+	margin: 0 auto;
+	font-size: 100%;
+}
+DIV.formulaire1 TABLE TD {
+	text-align: left;
+	padding: 5px;
+	font-size: 100%;
+}
+DIV.formulaire1 TABLE TD.titre {
+	padding-left: 30px; 
+	text-align: left;
+	font-weight: bold;
+}
+DIV.formulaire1 TABLE TD.col1{
+	padding-left:35px; 
+	width:40%; 
+	font-weight:bold;
+}
+DIV.formulaire1 TABLE TD.lib {
+	text-align: right;
+	font-weight: bold;
+}
+
+.page TABLE{
+	width:100%;
+}
+.bandeauTitre {
+	margin:5px 0 5px 0;
+	padding:0;
+	font-family:"Trebuchet MS",Arial;
+	font-weight: bold;
+	color:#436F6F;
+	font-size: 1.5em;
+	text-transform:uppercase;
+}
+.bandeauGris{
+	background-color:#E5EBEF;
+	padding: 2px 5px 2px 5px;
+}
+.sousTitre {
+	padding: 5px 0 15px 0px;
+	color: #505050;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.sousTitre2 {
+	padding: 5px 0px 0px 3px;
+	color: #505050;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+.page SPAN.titrevaleur{
+	background-color:#E6EBEF;
+	padding:1px;
+	border: 1px solid #000000;
+}
+.page SPAN.titre{
+	font-weight:bold;
+	color: #38A2A2;
+}
+.page SPAN.titre_petit{
+	vertical-align:center;
+	font-weight:bold;
+	color: #38A2A2;
+}
+.page SPAN.titre HR{
+	height: 1px;
+	border: 0;
+	background-color: #38A2A2;
+	color: #38A2A2;
+}
+
+/* --- Tableaux ------------------------------------------------------- */
+TR.AvantTitreTableau TH{
+	color:#FFFFFF; 
+	background-color:#A1B0BB; 
+	font-size: 12px;
+	font-weight:bold;
+	text-align: left;
+	vertical-align:middle;
+}
+
+TR.titreTableau TH{
+	font-size: 12px;
+	font-weight:bold;
+	text-align: center;
+	vertical-align:middle;
+}
+
+TR.titreTableau TH.titreTableauMontant, .standard TD.ligneTableauMontant {
+ text-align: right;
+ padding: 2px 15px 0px 5px;
+}
+
+
+table.standard {
+	width: 95%;
+	background-color: #FFFFFF;
+	margin: 0 auto 10px auto;
+	border-collapse:collapse;
+}
+
+.standard TH {
+	background-color: #38A2A2;
+	padding: 2px 5px 2px 5px;
+	vertical-align: top;
+	color: #FFFFFF;
+	white-space:nowrap;
+}
+
+.standard TH1 {
+	background-color: #38A2A2;
+	padding: 2px 5px 2px 5px;
+	vertical-align: top;
+	color: #FFFFFF;
+	white-space:nowrap;
+}
+
+.standard TH A {
+	color: #FFFFFF;
+}
+
+.standard TH1 A {
+	color: #FFFFFF;
+}
+
+.standard TR.soustitre TH {
+	background-color: #B9B9B9;
+	border-top: solid 1px #FFFFFF;
+}
+.standard TR.soustitre1 TH {
+	background-color: #B9B9B9;
+	border-top: solid 1px #FFFFFF;
+	font-size:90%;
+}
+.standard TR.soustitre TH.espace{
+	background-color:#FFFFFF;
+	width:10px;
+}
+.standard TR.soustitre1 TH.fontvert{
+	background-color: #38A2A2;
+}
+.standard TD {
+	padding: 2px 5px 2px 5px;
+	white-space:nowrap;
+}
+.standard TR.impair TD {
+}
+.standard TR.pair TD.espace {
+	background-color:#FFFFFF;
+	width:10px;
+}
+.standard TR.separation TD {
+	border-bottom: solid 1px #38A2A2;
+}
+.standard TR.soustotal TD.espace {
+	background-color:#FFFFFF;
+	width:10px;
+	/*border: solid 1px #FFFFFF;*/
+}
+.standard TR.pair TD {
+	background-color: #E0F3F3;
+}
+.standard TR.soustotal TD {
+	background-color: #E5EBEF;
+	font-size: 11px;
+	font-weight: bold;
+	border-top: solid 1px #FFFFFF; 
+	/*border-bottom: solid 1px #606060;*/
+}
+.standard TR.total TD {
+	background-color: #BEC3C6;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: solid 1px #FFFFFF;
+}
+.standard A {
+	color: #353535;
+}
+
+.standard IMG {
+	vertical-align: middle;
+}
+
+table.simple {
+	background-color: #E9ECF1;
+	margin: 0 auto 15px auto;
+	border-collapse:collapse;
+	
+}
+table.simple TH {
+	background-color: #38A2A2;
+	padding: 2px 5px 2px 5px;
+	vertical-align: top;
+	color: #FFFFFF;
+	white-space:nowrap;
+}
+table.simple td {
+	padding: 2px;
+	border-bottom: solid 1px #FFFFFF;
+}
+table.simple td.libelle {
+	padding-right:5px;
+	font-weight: bold;
+	text-align: right;
+	width: 50%;
+}
+table.simple td.valeur {
+	padding-left: 5px;
+	font-weight: bold;
+	text-align: left;
+	color: #569A99;
+	width: 50%;
+}
+
+table.simple td.valeur a {
+  color: #569A99;
+}
+
+table.cartouche {
+	width: 100%;
+	margin-bottom: 15px;
+	margin-top:20px;
+	background-color: #e5ebef;
+	font-size: 120%;
+}
+table.cartouche TR.titre TD {
+	background-color: #a1b0bb;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+table.cartouche TR.titre TD {
+	padding: 0px 5px 0px 5px;
+}
+table.cartouche TD {
+	padding: 2px 5px 2px 5px;
+	line-height:150%;
+	vertical-align:top;
+}
+table.cartouche TD.col1 {
+	border-right: 2px solid #FFFFFF;
+}
+table.cartouche TR.titre TD.fondBleu {
+	background-color: #38A2A2;
+}
+
+TABLE.headerOperations TD.col1 {
+	width: 15%;
+	text-align: right;
+	border: none;
+}
+TABLE.headerOperations .col2 {
+	width: 15%;
+	font-weight: bold;
+}
+TABLE.headerOperations .col3 {
+	width:30%;
+	text-align: right;
+}
+TABLE.headerOperations .col4 {
+	width: 15%;
+	font-weight: bold;
+}
+
+table.cartouche2 {
+	width: 100%;
+	margin-bottom: 15px;
+ 	background-color: #e5ebef ;
+	font-size: 100%;
+}
+table.cartouche2 TR.titre TD {
+ 	background-color: #a1b0bb; 
+	/* background-color:#6DA9AF; */
+	color: #FFFFFF;
+	font-weight: bold;
+}
+table.cartouche2 TR.titre TD {
+	padding: 2px 5px 2px 5px;
+}
+table.cartouche2 TD {
+	padding: 5px;
+	vertical-align:top;
+}
+
+TABLE.beneficiaires {
+	width:70%;
+}
+
+.cartouche4 {
+	margin:0 auto 20px auto;
+	width: 100%;
+	padding: 5px;
+	font-size: 100%;
+	background: #F5F5F5;
+	text-align: left;
+}
+.cartouche4 TD {
+	padding: 5px;
+}
+.cartouche4 .col1 {
+	width: 30%;
+	color: #666666;
+	font-weight: bold;
+}
+.cartouche4 SELECT {
+	margin-right: 30px;
+}
+
+table.verticalMiddle TD {
+	vertical-align: middle;
+}
+
+.tableBouton{
+	width:70%;
+	margin: 10 auto;
+}
+TABLE.tableBouton{
+	width:70%;
+	margin: 10px auto;
+}
+TABLE.tableBouton TD{
+	text-align:center;
+}
+.standard A.bouton {
+	margin:1px 2px;
+	padding-left: 5px;
+	color: #FFFFFF;
+}
+.standard A.bouton DIV {
+	padding-right: 5px;
+}
+
+DIV.signatureMdp {
+	width: 100%;
+	background-color: #e7ebef;
+	padding: 10px 0 10px 0;
+	margin: 10px auto 10px auto;
+}
+DIV.signatureMdp TABLE {
+	margin: auto;
+	width: 100%;
+	font-size: 100%;
+}
+DIV.signatureMdp TABLE TD {
+	width: 50%;
+	padding: 5px;
+	text-align: left;
+	font-weight: bold;
+}
+DIV.signatureMdp TABLE TD.col1 {
+	text-align: right;
+}
+DIV.signatureMdp TABLE TD.titre {
+	padding-left:30px; 
+	text-align:left;
+}
+DIV.signatureMdp TABLE INPUT {
+	width: 80px;
+}
+
+.tit2 {
+font: bold 14px arial;
+color: #323232;
+}
+.info2 {
+	font-size: 11px;
+	font-weight: bold;
+	color: #323232;
+}
+.info4 {
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+.info5 {
+	margin-bottom: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 130%;
+}
+.info6 {
+	font-weight: bold;
+	background-color:#E5EBEF;
+	margin-bottom:15px;
+	padding:10px;
+}
+
+.confirmation_ordre {
+	font-size: 11px;
+	color: #323232;
+	text-align:center;
+}
+
+/* Tableau changement mot de passe */
+TABLE.mdp TD.col1 {
+	text-align: right;
+	padding-left: 40px;
+}
+TABLE.mdp TD.col2 {
+	font-weight: bold;
+	text-align: left;
+	
+}
+TABLE.mdp TD.col3 {
+	padding-right: 40px;
+	font-weight: bold;
+	text-align: right;
+}
+
+DIV.signatureMdp3 {
+	background-color: #e7ebef;
+	padding: 10px 0 10px 0;
+}
+DIV.signatureMdp3 A {
+	text-decoration: none;
+}
+DIV.signatureMdp3 TABLE {
+	margin: auto;
+	width: 100%;
+	font-size: 100%;
+}
+DIV.signatureMdp3 TABLE TD {
+	width: 60%;
+	padding: 5px;
+	text-align: left;
+}
+DIV.signatureMdp3 TABLE TD.col1 {
+	text-align: right;
+}
+DIV.signatureMdp3 TABLE TD.titre {
+	padding-left:5px; 
+	text-align:left;
+}
+DIV.signatureMdp3 TABLE INPUT {
+	width: 80px;
+}
+
+/* Encart Identifiaction */
+.encartIdent {
+	float: right;
+	width: 45%;
+	border: 1px solid #38A2A2;
+	padding: 10px;
+	text-align:left;
+}
+.encartIdent UL {
+	margin-top: 6px;
+	margin-left: 15px;
+	padding-left: 0px;
+}
+.encartIdent LI {
+	margin-top: 5px;
+}
+
+.encartIdent a {
+	text-decoration: none;
+}
+
+/* Specifique convention  bourse achat vente */
+.convention_bnp{
+    margin-top:2%;
+    margin-bottom:2%;
+    margin-left:20%;
+    margin-right:20%;
+    font-family:arial;
+    font-size:7.5pt;
+    color:#000000;
+}
+
+.infconv_bnp{
+    margin-top:1%;
+    margin-bottom:1%;
+    font-family:arial;
+    font-size:7.5pt;
+    color:#323232;
+    font-weight:bold;
+}
+.simple TR.total TD {
+	background-color: #BEC3C6;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: solid 1px #FFFFFF;
+}
+
+.saut {
+    border: none;
+    height:5pt;
+    font-size: 0px;
+}
+
+ste th.montanten {
+    font-family:VERDANA;
+    font-size:7.5pt;
+    color:#000000;
+    background-color:#E5E5E5;
+    border: 2px solid Silver;
+    text-align: left;
+}
+
+/* Utiliser pour la macros AMOUNT ( permet de gerer la combinatoire :  lien + montant negatif + soulignement */ 
+a:link  span.negatif {
+	text-decoration: underline;
+    color:#FF0000;
+}
+
+a:link span.positif{
+	text-decoration: underline;
+	color:#353535;
+}
+
+a  span.negatif {
+	text-decoration: underline;
+    color:#FF0000;
+}
+
+a span.positif{
+	text-decoration: underline;
+	color:#353535;
+}
+
+span.negatif {
+  color:#FF0000;
+}
+
+span.positif{
+	color:#353535;
+}
+
+.button_wrapper {
+  width:95%; 
+  margin: 0 auto;
+  text-align:left; 
+  font-size: 13px;
+  font-weight: bold;
+  color: #323232;
+}
+.button_wrapper table {
+  width: 60%;
+  margin-top: 25px;
+}
+.button_wrapper table td {
+  width:50%;
+}
+
+.line {
+	margin: 15px auto 15px auto;
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+	color: #323232;
+	width:95%;
+}
+.line img { 
+  vertical-align:middle; 
+} 
+.line input {
+  vertical-align:middle;
+}
+
+/* tableau de synthese */
+table.synthese {
+  width: 95%;
+  background-color: #FFFFFF;
+  margin: 0 auto 10px auto;
+  border-collapse:collapse;
+  border: none;
+  text-align: left;
+  color: #002288;
+  white-space:nowrap;
+}
+table.synthese th  {
+  background-color: #38A2A2;
+  color: #FFFFFF;
+  white-space:nowrap;
+  font-weight: bold;
+  border: none;
+  padding: 0 5px;
+}
+table.synthese tr.titre th  {
+  text-align: center;
+  font-size: 12px;
+}
+table.synthese td  {
+  border: none;
+  padding: 0 5px;
+}
+
+/** style "matrice" pour page autlst.tht **/
+table.matrice {
+  width:1000px;
+  margin: 0 auto 10px auto;
+  background-color: #FFFFFF;
+  border-collapse:separate;
+  border:1px outset gray;
+  border-spacing: 0px;
+}
+table.matrice tr td {
+  padding:0px;
+  margin:0px;
+  border:1px inset gray;
+}
+table.matrice tr td.pile {
+  background-color:#FFFFFF; 
+  width:auto;
+  padding-left:181px;
+  height:205px;
+}
+table.matrice tr td.pile img {
+  border:none;
+  margin-left:-174px;
+}
+table.matrice tr td.texte {
+  border-right:none;
+  width:190px;
+  white-space:nowrap;
+  padding-left:2px;
+}
+table.matrice tr td.texte2 {
+  border-left:none;
+  width:280px;
+  white-space:nowrap;
+}
+table.matrice tr td.caseac {
+  width:27px;
+  height:22px;
+}
+table.matrice tr td.caseac input {  
+  width:20px;
+  margin:1px 3px;
+  padding:0px;
+  text-align:center;
+  vertical-align:middle;
+}
+table.matrice tr td.stuff {
+  width:450px;
+  height:22px;
+}
+table.matrice tr td.stuff input {  
+  width:20px;
+  margin:1px 3px;
+  padding:0px;
+  vertical-align:middle;
+}
+table.matrice tr td.diags {
+  background-color:#FFFFFF; 
+  width:850px;
+  padding-left:187px;
+  white-space:nowrap;
+}
+table.matrice tr td.diags img {
+  border:none;
+  margin-left:-180px;
+}
+table.matrice tr td.flags {
+  padding-left:7px;
+}
+table.matrice tr td.flags img {
+  border:none;
+  margin:1px 3px;
+  vertical-align:middle;
+}
+
+/* style "selectionGlobale" pour page autlst.tht */
+div.selectionGlobale {
+  width:1000px;
+  text-align:left;
+  margin:0 auto 10px auto;
+}
+div.selectionGlobale input {
+  vertical-align:middle;
+}
+
+/* style "frame" pour page autlst.tht */
+div.frame {
+  width:1000px; 
+  margin:0 auto;
+  /* par defaut la frame est cache */
+  display:none;
+  /*overflow:auto;*/
+  height:auto;
+}
+
+/* style "barre" pour page autlst.tht*/
+div.barre {
+  width:1400px; 
+  margin:0 20px 20px 80px;
+}
+div.barre a {
+  display:inline-block;
+  width:155px;
+  margin-right:-2px;
+  font:12px arial;
+  /* les 2 instructions ci-dessous permettent de centrer verticalement le texte */
+  padding:6px 6px;
+  text-align:center;
+  background-color:#E9ECF1;
+  border: solid 1px #E9ECF1;
+  /* evite que le lien soit souligne */
+  text-decoration:none;
+}
+div.barre a.select, div.barre a:hover {
+  font-weight:bold;
+  border: solid 1px #000000;
+  color:#000000;
+}
+
+/* styles pagination (macro pages) */
+div.pagi {
+  text-align:center;
+}
+div.pagi span {
+  margin:0px 3px;
+}
+div.pagi span {
+  margin:1px 3px;
+}
+div.pagi span a {
+  text-decoration:none;
+}
+div.pagi span a img {
+  vertical-align:middle;
+  height:16px;
+}
+
+/* styles pour le menu (frame gauche) */
+table.menu {
+  margin:20px 0 0 1px;
+}
+table.menu tr {
+  height:30px;
+}
+table.menu tr td{
+  padding-left:2px;
+}
+table.menu tr td a{
+  text-decoration:none;
+}
+table.menu tr td a:hover{
+  color:#A6394C;
+}
+
+/* styles pour la frame de titre (cf soltit.html & dcinet_Title.tht) */
+div.header {
+  height: 74px;
+  background: url('Fond_titre2.png') repeat-x;
+}
+div.header div {
+  height: 74px;
+  background: url('Fond_titre.png') no-repeat;
+  overflow:hidden;
+}
+div.header div div {
+  padding:30px 0 0 350px;
+  font-family:"Trebuchet MS",Arial;
+  font-weight: bold;
+  color:#436F6F;
+  font-size: 17px;
+}
+
+/* styles utilises lors de la refonte du treeview (tree.tht) */
+body.tree_backgrd {
+  background:url('menu.gif') left repeat-y;
+}
+div.tree {
+  display:block;
+  font: normal 11px arial;
+  color: #323232;
+  padding-top:6px;
+}
+div.tree a {
+  text-decoration:none;
+}
+div.tree a:hover {
+  color: #A6394C;
+}
+div.tree div.menu {
+  margin-left:20px;
+}
+div.tree div.node {
+  margin:15px 2px 4px 2px;
+  padding-left:10px;
+  background:url('flecheBleue.gif') center left no-repeat;
+}
+div.tree div.leaf {
+  margin:8px 2px 2px 2px;
+  padding-left:10px;
+}
+
+/*Message d'erreur avec incrustation de valeur dans le message */
+div.erreur2 {
+  
+  margin:10px 0px 10px 0px;
+  color:#000000;
+}
+
+

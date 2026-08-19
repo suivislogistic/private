@@ -1,0 +1,225 @@
+TweenLite.to($(".reactionsList a.reaction .bg_hover"),0,{opacity:0});
+TweenLite.to($(".reactionsList a.reaction .citation"),0,{x:-50,opacity:0});
+TweenLite.to($(".reactionContent"),0,{left:'100%',display:'none'});
+
+
+////////////////////////////////////////////////////////////
+// ADDRESS
+
+var currentReactionId = "";
+var previousScroll = 0;
+
+$(document).bind('ADDRESS_VARS_CHANGED',function(){
+	var reactionId = $_ADDRESS_VARS.split("/")[0];
+	debug("reactionId : " + reactionId);
+	
+	if(reactionId == ""){
+		//CLOSE PANNEL
+		TweenLite.to($(".reactionContent"),0.5,{left:'100%',display:'none'});
+		$(".reactions").css("height","inherit");
+		currentReactionId = "";
+		
+		//previousScroll
+		TweenLite.to(window, 0.5, {scrollTo:{y:previousScroll}, ease:Power2.easeOut});
+		
+	}else{
+		//SHOW PANNEL
+		showReaction(reactionId);
+	}
+});
+
+function showReaction($id){
+	debug("showReaction : " + $id);
+	
+	if($id != currentReactionId){
+		if(currentReactionId != ''){
+			TweenLite.to($(".reactionContent[rel='"+currentReactionId+"']"),0.5,{left:'100%',display:'none'});
+		}
+		
+		var reaction = $(".reactionContent[rel='"+$id+"']");
+		reaction.css("display","block");
+		
+		var rH = reaction.find(".inner").innerHeight();
+		var cH = $(".reactions").innerHeight();
+		//alert(rH + " / " +cH);
+		
+		if(rH > cH){
+			$(".reactions").css("height",(rH+30) + "px");
+			
+		}
+		
+		
+		TweenLite.to(reaction,0.5,{left:'0%',display:'block'});
+		
+		if($(".reactionContent[rel='"+$id+"']").length > 0){
+			previousScroll = $(document).scrollTop();
+			debug("previousScroll : " + previousScroll);
+		}
+		
+		//var t = 0;
+		var t = 0;
+		
+		if($(".reactionsList").innerWidth() < 768){
+			t = $(".reactions").offset().top - 50;
+		}
+		//TweenLite.to(window, 0.5, {scrollTo:{y:t}, ease:Power2.easeOut});
+		
+		if($_DEVICE_TYPE == 'mobile'){
+			t = $(".reactions").offset().top - 50;
+			setTimeout(window.scrollTo(0, t),100);
+		}else{
+			t = $("#menu").offset().top;
+			TweenLite.to(window, 0.5, {scrollTo:{y:t}, ease:Power2.easeOut});
+			setTimeout(function(){window.scrollTo(0, t)},501);//patch
+		}
+		
+	}
+		
+	currentReactionId = $id;
+}
+
+
+////////////////////////////////////////////////////////////
+
+function reactionsList_resize(){	
+	var bW;
+	var bH;
+	if($(".reactionsList").innerWidth() < 768){
+		bW = $(".reactionsList").innerWidth();
+		bH = bW*.63; 
+	}else{
+		bW = $(".reactionsList").innerWidth() / 3;
+		bH = bW;
+		
+	}
+	$(".reactionsList a.reaction,.reactionsCentre").css("width",bW + "px").css("height",bH + "px");
+	var b2 = 2*bW;
+	
+	$(".collaborateurs .reactionsCentre").css("width",b2 + "px");
+}
+
+if($_DEVICE_TYPE != "mobile"){
+
+	$(".reactionsList a.reaction").mouseenter(function(e) {
+		var bgHover = $(this).find('.bg_hover');
+		var name = $(this).find('.name');
+		var poste = $(this).find('.poste');
+		var citation = $(this).find('.citation');
+		
+		TweenLite.to(name,0.3,{delay:0.1,x:50,opacity:0});
+		TweenLite.to(poste,0.3,{x:50,opacity:0});
+		TweenLite.to(citation,0.3,{delay:0.2,x:0,opacity:1});
+		
+		TweenLite.to(bgHover,0.3,{opacity:1});
+	});
+	
+	$(".reactionsList a.reaction").mouseleave(function(e) {
+		var bgHover = $(this).find('.bg_hover');
+		var name = $(this).find('.name');
+		var poste = $(this).find('.poste');
+		var citation = $(this).find('.citation');
+		
+		TweenLite.to(name,0.3,{delay:0.1,x:0,opacity:1,overwrite:'all'});
+		TweenLite.to(poste,0.3,{delay:0.2,x:0,opacity:1,overwrite:'all'});
+		TweenLite.to(citation,0.3,{x:-50,opacity:0,overwrite:'all'});
+		
+		TweenLite.to(bgHover,0.3,{opacity:0,overwrite:'all'});
+	});
+
+}
+
+////////////////////////////////////////////////////////////
+// INFOBULLES
+
+function infoBulleHover($e){
+	
+	var infoBulle = $(this).find('.infoBulle');
+	
+	
+	
+	var w = infoBulle.innerWidth();
+	var l = ($(this).innerWidth() - w) / 2;
+	
+	l = -100;
+	
+	infoBulle.css("left",l + "px");
+}
+
+
+$(document).ready(function(){ 	
+	$(".videoHighlight").each(function(index, element) {
+        var _this = $(this);
+		var datas = {};
+		var id = $(this).attr('rel');
+		var p = $(this).closest(".reactionContent");
+		var temoignage_id = p.attr("rel");
+		
+		datas.action = 'getVideoInfos';
+		datas.id = id;
+		$.ajax({
+		  url: $_SITE_ROOT + "actions.php",
+		  dataType: 'json',
+		  data: datas,
+		  type: 'POST',
+		  success: function($datas){
+				//alert(_this.html());
+				
+				if($datas.results.complete == 1){
+					//_this.replaceWith('_this.text());
+					var HTML = "<a href='"+temoignage_id+"/video/" + $datas.results.string_id + "' class='videoHighlight address'>";
+					HTML += _this.html();
+					//HTML += "<span class='infoBulleOff'>" + $datas.results.label + "</span>";
+					HTML += "<span class='infoBulleOff'>Découvrir cette fonctionnalité en vidéo</span>";
+					HTML += "</a>";
+					var nLink = _this.replaceWith(HTML);
+					//<a href="video/gerer-ma-messagerie" class="videoHighlight address">
+					
+					addressPrepareLinks($('.reactionContent'));
+					
+					$(".reactionContent .infoBulleOff").each(function(index, element) {
+                        var vh = $(this).closest('.videoHighlight');
+						$(this).removeClass('infoBulleOff').addClass('infoBulle');
+						
+						var w = $(this).innerWidth();
+						var l = (vh.innerWidth() - w) / 2;
+						$(this).css("left",l + "px");
+						
+						vh.mouseenter(infoBulleHover);
+                    });
+				}
+			},
+		  error: function($datas){
+			
+		  }
+		});
+		
+		
+    });
+	
+	
+
+});
+
+$(".shareCollaborateur").each(function(index, element) {
+	
+
+	var href = "mailto:?subject=" + encodeURIComponent("Découvrez le nouveau site BNP PARIBAS en avant-première !") + "&body=" + encodeURIComponent("Je viens de découvrir la plateforme collaborateurs qui nous explique tout sur le nouveau site BNP Paribas.\nPrésentation détaillée des nouvelles fonctionnalités, premiers témoignages d’utilisateurs...\nFamiliarisez-vous sans plus attendre avec la nouvelle interface en vous rendant sur http://b2e.group.echonet/index.php?pid=64220 \n\nN’hésitez pas à faire part de vos premières impressions et commentaires sur cette plateforme !");
+	
+	
+	/*
+   var href = "mailto:?subject=" + encodeURIComponent("Découvrez le nouveau site BNP PARIBAS en avant-première !") + "&body=" + encodeURIComponent("Je viens de découvrir la plateforme collaborateurs qui nous explique tout sur le nouveau site BNP Paribas.\n\nPrésentation détaillée des nouvelles fonctionnalités, premiers témoignages d’utilisateurs..\nFamiliarisez-vous sans plus attendre avec la nouvelle interface en vous rendant sur http://www.toutsavoirsurmabanque.bnpparibas/collaborateurs\n\nN’hésitez pas à faire part de vos premières impressions et commentaires !");
+   */
+
+	
+	$(this).attr("href",href);
+});
+
+
+
+
+
+////////////////////////////////////////////////////////////
+
+$(document).bind('SIZE_CHANGED',reactionsList_resize);
+reactionsList_resize();
+

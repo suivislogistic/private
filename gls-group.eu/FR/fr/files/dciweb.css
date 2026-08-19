@@ -1,0 +1,121 @@
+
+
+
+#th { font-family:VERDANA; font-size:x-small; color:#000000; background-color:#FFE399; }
+#thlnk { color:#000000; }
+#td { font-family:VERDANA; font-size:x-small; color:#000000; background-color:#FFFFFF; text-align:_*center*_}
+#td1 { font-family:VERDANA; font-size:x-small; color:#000000; background-color:#CCCCCC; text-align:_*center*_}
+#cad { font-family:VERDANA; font-size:x-small; }
+#car { font-family:VERDANA; font-size:80%; background-color:#FEF7E4; }
+#car1 { font-family:VERDANA; font-size:80%; background-color:#FEF7E4; }
+#car2 { font-family:VERDANA; font-size:80%; background-color:#FEF7E4; }
+#txt1 { font-family:VERDANA; font-size:110%; color:#002288; font-weight: bold;}
+#txt2 { font-family:VERDANA; font-size:x-small; }
+#tit1 { font-family:VERDANA; font-size:x-small; color:#002288; }
+#tit2 { font-family:VERDANA; font-size:small; color:#002288; }
+#tit3 { font-family:VERDANA; font-size:110%; color:#002288; }
+#menu { font-family:VERDANA; font-size:70%; color:#000000; text-decoration: none}
+#ide { font-family: VERDANA; font-size:100%; }
+#btn { font-family: ARIAL,HELVETICA,SANS-SERIF; font-size:11PX; color: #046635; text-decoration:underline}
+#pagtxt { font-family:VERDANA; font-size:90%; color:#002288; }
+#bub { font-family:VERDANA; font-size:70%; color:black; background-color:#FFFACD; }
+#td_0 { color:#8000FF; background-color:#CCCCCC; }
+#td_2 { background-color:#CCCCCC; }
+#td_3 { color:#0000FF; background-color:#CCCCCC; }
+#td_9 { color:#FF0000; background-color:#CCCCCC; }
+
+
+
+
+.soustitre {font-size:110%; font-family:ARIAL; text-align:center;}
+.legende {margin-top:0px; margin-bottom:20px; padding-top:0px; padding-left:3%; font-size:90%; font-family:ARIAL; text-align:left;}
+
+#menu:hover { color:#FFFFFF; }
+
+
+
+
+
+
+.popper    { position:absolute; VISIBILITY: hidden;}
+.topmendyn { position:absolute; }
+.mendyn    { }
+.mendynover{  }
+.sousmendyn{  }
+
+.select{background-color:#CCCCCC; color:#000000; font-size:x-small; font-family:VERDANA;}
+.change{background-color:#CCCCCC; color:#000000; font-size:x-small; font-family:VERDANA;}
+.ligne {background-color:#FFFFFF; color:#000000; font-size:x-small; font-family:VERDANA;}
+
+#tdpag { font-size:100%; color:#000000; background-color:#22AAFF; text-align: center;}
+.pagetable{border:none; margin-left : auto; margin-right : auto;}
+#intform { font-size:100%; color:#000000; background-color:#22AAFF; font-weight: bold; text-align: left;}
+#endform { font-size:100%; color:#000000; background-color:#22AAFF; }
+#endlst { font-size:100%; color:#000000; background-color:#22AAFF; border-top-style:solid; border-top-color:#000000; border-top-width:thin; padding-bottom:0; padding-top:0; padding-left:0; padding-right:0;}
+
+#buttoncode{ width:22px; height:18px; padding:0px; color:#000000; background-color:#ffffff;}
+
+.relsol{color:#000000; background-color:#FFFFFF; }
+.pagsel { font-family:TIMES NEW ROMAN; font-size:90%; color:#FF0000; }
+
+.lien { }
+
+.warning{ font-family:ARIAL; font-size:110%; color:#000000; font-weight: bold; text-align: center}
+.erreur{ font-family:ARIAL; font-size:110%; color:#FF0000; font-weight: bold; text-align: center}
+
+/* Completement pour Elcard */
+.display_error_red{color:#FF0000; border-color:#FF0000;}
+.display_error_orange {color:#FF9900; border-color: #FF9900;}
+.red_galery {border-color:#FF0000; color:#FF0000; background : #FFFFFF; border: 2px solid; font-weight:bold; font-size: 12px; margin-bottom: 4px;}
+.orange_galery {border-color:#FF9900; color:#FF9900; background : #FFFFFF; border: 2px solid; font-weight:bold; font-size: 12px; margin-bottom: 4px;}
+.orange_galery a {color: #FF9900}
+.red_galery a {color: #FF0000}
+.hideShowLink {color: yellow}
+.elcardLink {color: yellow}
+table.keypad {border-collapse:collapse; border-style:solid; border-color:black; border-width:1px;}
+td.keypad {border-style:solid; border-width:1px; text-align:center;}
+a.keypad {border: 0px;}
+img.keypad {border: 0px;}
+.keypadSelected {border: 3px inset;}
+.keypadUnselected {border: 3px solid white;}
+table.challenge {border-collapse:collapse; border:0px;}
+td.challenge {border:0px;}
+img.challenge {border: 0px;}
+table.keyboardEntry {border-collapse:collapse; border-style:solid; border-color:black; border-width:0px;}
+td.keyboardEntry {border-style:solid; border-color:black; border-width:1px;}
+img.keyboardEntry {border: 0px;}
+
+
+/* Definition du style du clavier virtuel flottant */
+.mouv{background-color:#2287FF; filter:alpha(opacity=70); -moz-opacity:.70; opacity:.70; text-align:right; width:225px; height:25px;}
+.fond{background-color:#418BFC; filter:alpha(opacity=70); -moz-opacity:.70; opacity:.70; width:225px; height:200px;}
+.mouvident{background-color:#2287FF; filter:alpha(opacity=70); -moz-opacity:.70; opacity:.70; text-align:right; width:225px; height:25px;}
+.fondident{background-color:#418BFC; filter:alpha(opacity=70); -moz-opacity:.70; opacity:.70; width:225px; height:200px;}
+.fond td{font-family:TIMES NEW ROMAN; font-size:90%; color:#FFFFFF;}
+.fondident td{font-size:10pt; font-family:Arial, Helvetica, sans-serif; color:#FFFFFF;}
+/* Fin definition du style du clavier virtuel flottant */
+
+/*Style de la frame titre*/
+.frametit{}
+.contenttitle {}
+.logo {}
+/*fin Style de la frame titre*/
+
+/*Style de selection de la premiere lettre dans une liste de beneficiaires*/
+.carsel{font-size:90%; font-family:TIMES NEW ROMAN; color:#FF0000;}
+
+.mesobl{width:95%; text-align:left; font-size:10pt; font-family:Arial, Helvetica, sans-serif; color:#000000;}
+.mesval{margin-left:2.5%; text-align:left;}
+.mesval td{font-size:10pt; font-family:Arial, Helvetica, sans-serif; color:#000000;}
+
+.msginf{background: transparent url(infobtn.gif) no-repeat 20px; padding-left:50px; font-family:ARIAL; color:#000000; font-weight: bold;}
+.msginf1{font-family:ARIAL; color:#000000;}
+.msginf2{padding-left:50px; font-family:ARIAL; color:#000000; font-weight: bold;}
+.msgdet{padding-left:100px; font-family:ARIAL; color:#000000; border-color:black; border-width:1px; border-style:solid;}
+
+.aucun{font-size:110%; font-family:ARIAL}
+
+.popupmess{position:absolute; left:10px; top:4px; padding:3px; font-family:TIMES NEW ROMAN; font-size:100%; color:black; background-color:#FFFACD; border:2px solid Silver;}
+.popupmessclose{width:70%; text-align:left; font-weight: bold;}
+.popup1{color:black; font-weight: bold;}
+.popup2{color:black; font-weight: bold;}

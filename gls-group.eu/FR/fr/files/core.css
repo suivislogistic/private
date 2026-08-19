@@ -1,0 +1,316 @@
+/* CSS Document */
+
+
+
+/*------------------------------------------------------*/
+
+*{
+	margin:0;
+	padding:0;	
+}
+
+html{
+	height:100%;
+	font-size:14px;
+	line-height:160%;
+}
+
+body{
+	min-width:320px;
+	text-align:center;	
+	position:relative;
+	min-height:100%;
+	
+	
+	font-family:'bnpp_typeregular',Arial, Helvetica, sans-serif;
+	background:#272727;
+	color:#212121;
+	font-size:15px;
+	
+	overflow-x: hidden;
+	overflow-y:auto;
+}
+
+body.checkSize{
+	width:1px !important;
+	height:1px !important;
+	overflow:hidden !important;	
+}
+
+.clear{
+	float:none; 
+	clear:both;
+	height:0;
+	line-height:0;
+	font-size:0.0001em;
+	overflow:hidden;
+}
+
+#cache,
+.cache{
+	width:0;
+	height:0;
+	overflow:hidden;	
+}
+
+a img{
+	border:none;	
+}
+
+li{
+	list-style:none none outside;	
+}
+
+.grayscale{
+	-moz-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    -o-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+}
+
+/*--------------------------------------------------------*/
+
+
+#root{
+	position:relative;
+}
+
+.wBloc{
+	margin:auto;	
+	/*max-width:1366px;*/
+	/*max-width:1310px;*/
+	
+	
+	text-align:left;
+	position:relative;
+	padding:0 28px 0 28px;
+}
+.wBlocNoMax{
+	margin:auto;	
+	text-align:left;
+	position:relative;
+	padding:0 28px 0 28px;
+}
+.wFullBloc{
+	margin:auto;	
+	max-width:1366px;
+	text-align:left;
+	position:relative;
+}
+
+
+
+#header{
+	background:#ffffff;
+	border-bottom:3px solid #008f6e;
+	height:58px;
+	overflow:hidden;
+}
+
+#header .logoBnp{
+	float:left;
+	display:block;	
+}
+
+#header .btnDecouvrir{
+	float:right;
+	display:block;	
+}
+
+#header .title{
+	float:right;
+	display:block;	
+}
+
+
+#menu{
+	position:relative;	
+}
+
+#menu .nav{
+	background:#272727;
+	height:60px;
+	overflow:hidden;
+	text-align:center;
+	/*max-width:1366px;*/
+	margin:auto;
+	
+	background:#1fcda8 url(../_img/degradeeV2.png) no-repeat 0 0;
+}
+
+
+
+#menu .nav li{
+	float:left;
+	display:block;	
+	height:60px;
+	overflow:hidden;
+	position:relative;
+	width:25%;
+}
+
+body.collaborateurs #menu .nav li{
+	width:20%;
+}
+
+#menu .nav li a:link,
+#menu .nav li a:visited{
+	display:block;
+	height:60px;
+	border-left:1px solid #383838;
+	border-right:1px solid #1c1c1c;
+	overflow:hidden;
+	text-decoration:none;
+	background:#272727;
+}
+
+#menu .nav li a:link span,
+#menu .nav li a:visited span{
+	display:block;
+	height:60px;
+	line-height:-1000px;
+	font-size:0 !important;	
+	overflow:hidden;
+	background-repeat:no-repeat;
+	background-position:center 0;
+
+}
+
+#menu .nav li a:hover,
+#menu .nav li a:active,
+#menu .nav li a.selected:link,
+#menu .nav li a.selected:visited{
+	border-color:#62c46d;
+	border-color:transparent;
+	/*background:#62c46d url(../_img/nav_hover_bg.png) repeat-x 0 0;*/
+	background:none;
+}
+
+#menu .nav li a:hover span,
+#menu .nav li a:active span,
+#menu .nav li a.selected:link span,
+#menu .nav li a.selected:visited span{
+	background-position:center -60px;
+}
+
+#menu .nav li a.index:link span,
+#menu .nav li a.index:visited span{
+	background-image:url(../_img/menu_votre-reaction.png);	
+}
+#menu .nav li a.pourquoi-changer:link span,
+#menu .nav li a.pourquoi-changer:visited span{
+	background-image:url(../_img/menu_pourquoi-changer.png);	
+}
+#menu .nav li a.en-pratique:link span,
+#menu .nav li a.en-pratique:visited span{
+	background-image:url(../_img/menu_en-pratique.png);	
+}
+#menu .nav li a.reponses-aux-objections:link span,
+#menu .nav li a.reponses-aux-objections:visited span{
+	background-image:url(../_img/menu_reponses-aux-objections.png);	
+}
+#menu .nav li a.donnez-votre-avis:link span,
+#menu .nav li a.donnez-votre-avis:visited span{
+	background-image:url(../_img/menu_donnez-votre-avis.png);	
+}
+
+
+
+
+#footer_entete{
+	font-family: 'bnpp_sans_condensedregular',Arial, Helvetica, sans-serif;
+	font-size:27px;
+	background:#2f2f2f;
+	padding:30px 28px 30px 28px;
+	text-transform:uppercase;
+	color:#1abb5a;
+	line-height:33px;
+}
+
+#footer{
+	font-family: 'bnpp_typeregular',Arial, Helvetica, sans-serif;
+	background:#272727;
+	padding:15px 28px 15px 28px;
+	color:#999999;
+	font-size:13px;
+}
+
+#footer a:link,
+#footer a:visited{
+	color:#999999;
+	text-decoration:none;
+	margin:0 15px;
+}
+
+#footer a:hover,
+#footer a:active{
+	color:#FFF;
+}
+
+
+.navHeader{
+	padding:20px 0 20px 0;
+
+	background:#1fcda8 url(../_img/degradeeV2.png) no-repeat 0 -60px;
+	
+	
+	
+	color:#FFF;
+	text-align:left;
+	z-index:500;
+	/*
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	*/
+	
+	-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+body.res_320 .navHeader{
+	/*background-size:cover;*/
+	background-position:0 0;
+
+	
+}
+
+.navHeader h2{
+	font-family: 'bnpp_typeregular',Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:19px;
+	margin:0 0 10px 0;
+}
+
+.navHeader h1{
+	font-family: 'bnpp_sans_condensedlight',Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-transform:uppercase;
+	font-size:40px;
+	line-height:45px;
+	margin:0 0 10px 0;
+}
+
+#body{
+	background:#eaeaea;
+	padding:50px 0;
+	position:relative;
+}
+
+#body h2,#enPratique h2{
+	font-family: 'bnpp_sans_condensedlight',Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-transform:uppercase;
+	font-size:42px;
+	margin:0 0 28px 0;	
+	line-height:48px;
+}
+
+.green{
+	color:#1da460;	
+}
+
+

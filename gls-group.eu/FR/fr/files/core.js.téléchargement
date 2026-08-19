@@ -1,0 +1,276 @@
+//check youtube
+
+//$_HAS_YOUTUBE
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+var isIE = false;
+if(navigator.userAgent.search("MSIE") > 0){
+	isIE = true;
+}
+var oldIE;
+if ($('html').is('.ie6, .ie7, .ie8')) {
+	oldIE = true;
+}
+
+var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false );
+var iPad = ( navigator.userAgent.match(/(iPad)/i) ? true : false );
+var iPhone = ( navigator.userAgent.match(/(iPhone|iPod)/i) ? true : false );
+var android = ( navigator.userAgent.match(/(android)/i) ? true : false );
+var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////
+// REDIMENTIONNEMENT
+
+
+function checkSize(){
+	$("body").addClass("checkSize");		
+	windowWidth = $(window).width();	
+	windowHeight = $(window).height();	
+	$("body").removeClass("checkSize");
+	
+	debug("windowWidth : " + windowWidth);
+	debug("windowHeight : " + windowHeight);
+	
+	//switch CSS
+	
+	if(windowWidth >= 1366){
+		$("body").removeClass("res_320");
+		$("body").removeClass("res_768");
+		$("body").removeClass("res_1024");
+		$("body").addClass("res_1366");
+		mobile_hideMenu();
+	}
+	else if(windowWidth >= 1024){
+		$("body").removeClass("res_320");
+		$("body").removeClass("res_768");
+		$("body").addClass("res_1024");
+		$("body").addClass("res_1366");
+		mobile_hideMenu();
+	}
+	else if(windowWidth >= 768){
+		$("body").removeClass("res_320");
+		$("body").addClass("res_768");
+		$("body").addClass("res_1024");
+		$("body").addClass("res_1366");
+		mobile_hideMenu();
+	}else{
+		$("body").addClass("res_320");
+		$("body").addClass("res_768");
+		$("body").addClass("res_1024");
+		$("body").addClass("res_1366");
+	}
+	
+	
+
+	
+	
+	$(document).trigger('SIZE_CHANGED');
+	fitUpdate();
+}
+
+//window.addEventListener('resize', checkSize, false);
+window.onresize = checkSize;
+
+////////////////////////////////////////////////////////////////////////////////////
+// ADDRESS
+
+var state;
+var address_first = true;
+
+function addressPrepareLinks($element){
+	if(!$element) $element = $(document);
+	debug("addressPrepareLinks()");	
+	$element.find('a.address:not(.addressDone)').each(function(index, element) {
+		debug("href : " + $(this).attr("href"));
+		if(state){
+			$(this).address(); 
+		}else{
+			var h = $(this).attr("href");
+			if(h.indexOf("#") < 0){
+				$(this).attr("href","#/" + h);
+			}
+		}
+		$(this).addClass("addressDone");
+	});	
+	
+	//PATCH BUG
+	$element.find("a.address[href='"+$_STATE_ROOT+"']").click(function(e) {
+        //alert("go home! " + $.address.baseURL());
+		//alert("bob");
+		//$.address.value('/');
+		$.address.value('/close');
+		$.address.value('/');
+    });
+
+}
+
+function addressChange($event){
+	$_ADDRESS_PATH = $event.value;	
+	//alert($_ADDRESS_PATH);
+	
+	debug('$_ADDRESS_PATH : ' + $_ADDRESS_PATH);
+	debug('$.address.baseURL() : ' + $.address.baseURL());
+	debug('$.address.path() : ' + $.address.path());
+	
+	
+	$_ADDRESS_VARS = $_ADDRESS_PATH.substring(1);
+	
+	//$.address.baseURL()
+	//alert("$_STATE_ROOT : " + $_STATE_ROOT);
+
+	//à améliorer...
+	if($_STATE_ROOT.indexOf($_ADDRESS_VARS) > -1) $_ADDRESS_VARS = "";
+	if(state && address_first){
+		$_ADDRESS_VARS = $_PAGE_VARS;
+		address_first = false;	
+	}
+	debug('$_STATE_ROOT : ' + $_STATE_ROOT);
+	debug('$_ADDRESS_VARS : ' + $_ADDRESS_VARS);
+	$(document).trigger('ADDRESS_VARS_CHANGED');
+}
+
+$(document).bind('ADDRESS_VARS_CHANGED',function(){
+	hidePopin();
+	if($_ADDRESS_VARS.indexOf('video') > -1){
+		var videoId = $_ADDRESS_VARS.split("video/")[1];
+		debug("videoId : " + videoId);
+		
+		if($_DEVICE_TYPE == "mobile" || $_DEVICE_TYPE == "tablet"){
+			//$.address.value('/close');
+			//$.address.value('/');
+			
+			var href = $_SITE_ROOT + "video_mobile.php?videoId=" + videoId;
+			//window.location.href = href;
+			
+			
+			window.open(href, "video");
+			
+			//window.location.href
+			//window.location.reload();
+			
+			//return false;
+		}else{
+			showPopin("video","videoId=" + videoId);
+		}
+		
+		
+		
+	}else{
+		
+	}
+	
+	
+	
+});
+
+////////////////////////////////////////////////////////////////////
+// MENU MOBILE
+
+function mobile_showMenu(){
+	TweenLite.to($(".mobile_nav_inner"),0,{left:"-100%"});
+	$("#mobile_nav").css("display","block");
+	TweenLite.to($(".mobile_nav_inner"),0.5,{left:"0"});
+}
+
+function mobile_hideMenu(){
+	TweenLite.to($(".mobile_nav_inner"),0.5,{left:"-100%",onComplete:function(){
+		$("#mobile_nav").css("display","none");
+	}});
+}
+
+//////////////////////////////////////////////////
+	
+$(document).ready(function(){ 		
+
+	debug("iOS : " + iOS);
+	debug("iPad : " + iPad);
+	debug("iPhone : " + iPhone);
+	debug("android : " + android);
+	debug("supportsTouch : " + supportsTouch);
+	debug("$_DEVICE_TYPE : " + $_DEVICE_TYPE);
+	
+	///////////////////////////////////////////////////////////////////////
+	
+	checkSize();
+	
+	///////////////////////////////////////////////////////////////////////
+	
+	$("#mobile_header .openNav").click(mobile_showMenu);
+	$("#mobile_nav .close").click(mobile_hideMenu);
+	
+	//highlight current menu
+	$("#menu li[rel='"+$_PAGE_ID+"'] a,#mobile_nav li[rel='"+$_PAGE_ID+"'] a").addClass("selected");
+	
+	///////////////////////////////////////////////////////////////////////
+	// INIT ADDRESS
+	state = window.history.pushState !== undefined;	
+	//$_STATE_ROOT = '/toutsavoirsurmabanque/en-pratique/';
+	if(state){		
+		$.address.state($_STATE_ROOT).init(function() {
+			//
+		}).change(addressChange);
+	}else{
+		$.address.autoUpdate(false).change(addressChange);
+	}
+	//$.address.autoUpdate(false).change(addressChange);
+
+	addressPrepareLinks();
+	
+	///////////////////////////////////////////////////////////////////////
+	// SELECT
+	
+	$('html').click(function() {
+		$(".select").removeClass('opened');
+		$(".select ul").slideUp(200);
+	});
+	
+	$(".select .lab").click(function(e) {
+        e.stopPropagation();
+		var sel = $(this).closest('.select');
+		if(sel.hasClass('opened')){
+			sel.removeClass('opened');
+			sel.find('ul').slideUp(200);
+		}else{
+			sel.addClass('opened');
+			sel.find('ul').slideDown(200);
+		}
+    });
+	
+	$(".select li").click(function(e) {
+        var sel = $(this).closest('.select');
+		var lab = sel.find(".lab");
+		lab.text($(this).text());
+		lab.attr("rel",$(this).attr('rel'));
+    });
+	
+	
+	///////////////////////////////////////////////////////////////////////
+	
+	$(window).load(function() {
+		  checkSize();
+		  //fitUpdate();
+	});
+	
+	/*
+	$(window).bind("load", function() {
+		checkSize();
+	});
+	
+	
+	waitForWebfonts(['MyFont1', 'MyFont2'], function() {
+		// Will be called as soon as ALL specified fonts are available
+		checkSize();
+	});
+	
+	*/
+	
+
+	
+});
+
+

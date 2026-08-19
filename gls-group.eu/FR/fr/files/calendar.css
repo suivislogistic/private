@@ -1,0 +1,21 @@
+input.calIcon{background: url(/en_US/i/icon/icon_calendar_txn_16x16.gif) no-repeat 99% 2px; padding:3px;}
+.calcontainer {position:absolute; width:190px; height:15.3em; border:1px solid #ccc; background:#fff; font-size:.93em; z-index:2;}
+.calcontainer .calendar {width:100%; margin:0; border-collapse:collapse;}
+.calendar th.calmonth {position:relative; width:100%; padding:0; background:#e8f1fa;}
+.calendar .calheader {padding:6px 0 5px 0;}
+.calendar .prevYear, .calendar .prevMonth, .calendar .nextMonth, .calendar .nextYear{
+position:absolute; top:6px; width:14px; height:13px; text-decoration:none; cursor: pointer;}
+.calendar .prevYear {left:3px; background:url(/en_US/i/icon/icon_calendar_arrows_86x13.gif) no-repeat 0px top;}
+.calendar .prevMonth {left:22px; background:url(/en_US/i/icon/icon_calendar_arrows_86x13.gif) no-repeat -24px top;}
+.calendar .nextMonth {right:22px; background:url(/en_US/i/icon/icon_calendar_arrows_86x13.gif) no-repeat -48px top;}
+.calendar .nextYear {right:2px; background:url(/en_US/i/icon/icon_calendar_arrows_86x13.gif) no-repeat -73px top;}
+.calendar .weekrow th {padding:6px 0 5px 0; color:#666; text-align:center;}
+.calendar td {padding:1px 3px; text-align:center;}
+.calendar td a:link, .calendar td a:visited, .calendar td a:focus, .calendar td span
+{display:block; border:1px solid #fff; padding:1px; color:#000; text-decoration:none;}
+.calendar td span {color:#ccc;}
+.calendar td.selected a:link, .calendar td.selected a:visited, 
+.calendar td a:hover{border:1px solid #f90; background:#ffc;}
+.calendar td.today a:link, .calendar td.today a:visited{border:1px solid #666;}
+.calIconMask{display:block; width:20px; cursor:pointer;}
+.calIconMask.disable{cursor:default;}
