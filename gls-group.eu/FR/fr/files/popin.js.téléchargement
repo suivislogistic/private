@@ -1,0 +1,104 @@
+// V special ADDRESS
+
+var popin_visible = false;
+
+function showPopin($id,$params){
+	if($id == "null") return;
+	popin_visible = true;
+	$("#popin_content").html("<div class='popin_loader'></div>");
+	resizePopin();
+	
+	$("#popin_content").load($_SITE_ROOT + "popins/" + $id + ".php?" + $params,function(){
+		//
+		resizePopin();
+		setTimeout(resizePopin,1000);
+		setTimeout(resizePopin,3000);
+		
+	});
+	
+	$("#popin_bg").fadeIn(200);
+	$("#popin").delay(200).fadeIn(200);
+}
+
+function hidePopin(){
+	//alert($.address.value());
+	
+	///comptes-contrats/video/tout-sur-mes-comptes
+	
+	popin_visible = false;
+	
+	
+	$("#popin_bg").fadeOut(200);
+	$("#popin").fadeOut(200,function(){
+		$("#popin_content").html("");
+	});
+}
+
+function _hidePopin(){
+	var addVal = $.address.value();
+
+	
+	if($_ADDRESS_VARS.indexOf("video/") > -1){
+		var addBase = $_ADDRESS_VARS.split("video/")[0];
+		//alert("addBase : " + addBase);
+		$.address.value(addBase + "/close");//patch bug
+		$.address.value(addBase);
+		
+	}else{
+		
+	}
+	hidePopin();
+}
+
+
+
+function resizePopin($rescroll){	
+	if(!popin_visible) return false;	
+	scrollTop = $(window).scrollTop();
+	var popinH = $("#popin").innerHeight();	
+	
+	
+	
+	if(popinH > windowHeight){
+		popinTop = 10;
+		if(scrollTop > 0 && $rescroll == true) TweenLite.to(window, 0.1, {scrollTo:{y: 0, x:0}, ease:Power4.easeInOut});
+	}else{
+		popinTop = scrollTop + (windowHeight - $("#popin").innerHeight()) / 2;
+	}	
+	popinLeft = ($("#popin_bg").innerWidth() - $("#popin").innerWidth()) / 2;	
+	
+	//alert("$_NONAV : " + $_NONAV);
+	if($_NONAV == 1){
+		popinTop = scrollTop + 10;
+	}
+	
+	
+		
+	$("#popin").css("left",popinLeft + "px");
+	$("#popin").css("top",popinTop + "px");	
+	$("#popin_bg").css("top",scrollTop + "px");	
+	fitUpdate($("#popin_content"));
+}
+	
+$(window).scroll(resizePopin);
+$(document).bind('SIZE_CHANGED',resizePopin);
+
+$("#popin_bg").click(function(){
+	if($("body").hasClass('formSended')){
+		
+	}else{
+		_hidePopin();	
+	}
+	
+});
+$("#popin .btnClose").click(_hidePopin);
+
+$(document).bind('CODE_LOADED',function(){
+	$("a[rel='popin']").click(function(e) {
+		var tmp = $(this).attr("href").split("?");
+		var id = tmp[0].split("#").join("");
+		showPopin(id,tmp[1]);
+		return false;
+	});
+});
+

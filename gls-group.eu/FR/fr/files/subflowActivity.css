@@ -1,0 +1,114 @@
+/* 37703 EC2 > POS change-payment-option lightbox styles */
+
+#lbActvty div, #lbActvty span, #lbActvty p, #lbActvty label, #lbActvty h2{margin:0; padding:0;}
+body.masked .mask{background-color:#000;opacity:0.5;}
+#lbActvty_c .underlay, #lbActvty_c .hide{display:none !important;}
+/* Change payment option page */
+#lbActvty{color:#333;font-size:1em;border-radius:5px;box-shadow:0 0 10px 3px;width:498px;max-height:600px;min-height:300px;}
+#lbActvty .header{margin-bottom:20px;padding:0;}
+#lbActvty h2{color:#333;font-size:25px;font-weight:normal;background:none;}
+#lbActvty .summary{border-bottom:1px solid #ddd;padding-bottom:15px;}
+#lbActvty .summary .date{color:grey;float:left;}
+#lbActvty .summary .amount{float:right;color:grey;font-size:large;font-style:italic;}
+#lbActvty .summary p{clear:left;font-weight:bold;margin:0;padding:5px 0 0;}
+#lbActvty .paymentoptions{margin-top:15px;}
+/* Calendar widget */
+#lbActvty .paymentoptions div{margin-bottom:15px;}
+#lbActvty .paymentoptions label{margin-bottom:5px;display:block;}
+#lbActvty .paymentoptions p{margin:10px 0;}
+#lbActvty .paymentoptions .caloption.error .helptext{background:transparent url("https://www.paypalobjects.com/webstatic/i/ex_ce2/sprite/sprite_globalIcons.png") no-repeat scroll 0 -700px;padding-left:10px;color:red;display:block;margin-top:5px;}
+#lbActvty .paymentoptions .caloption.error input{border:1px solid red;}
+#lbActvty .paymentoptions .caloption input#dtcal{height:20px;width:92px;}
+#lbActvty .paymentoptions .caloption input.calIcon{background:url("/en_US/i/icon/icon_ce2activity_calendar.png") no-repeat scroll 70px 2px transparent;}
+/* Funding options */
+#lbActvty .paymentoptions .foptions p{margin:1em 0 0.25em;}
+/* Done page */
+#lbActvty .container{border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:2px 0;overflow:auto;margin-bottom:15px;}
+#lbActvty .thanx{background-color:#ecf5ed;padding-left:10px;}
+#lbActvty .thanx.failed{background-color:#fef2f2;}
+#lbActvty .thanx .message{font-weight:bold;margin-left:2px;padding:10px 20px;}
+#lbActvty .thanx .message.success{background:#ecf5ed url("https://www.paypalobjects.com/webstatic/i/ex_ce2/sprite/sprite_globalIcons.png") no-repeat scroll 0 -490px;padding-left:30px;}
+#lbActvty .thanx .message.failed{background:#fef2f2 url("https://www.paypalobjects.com/webstatic/i/ex_ce2/sprite/sprite_globalIcons.png") no-repeat scroll 0 -390px;padding-left:30px;}
+#lbActvty .thanx .message p{margin:0;padding:0;}
+/* this is required for the calendar widget to be visible over the lightb-box */
+#calPanel_dtcal, .calPanel_dtcal{z-index:5002 !important;}
+/* overridding lightbo-box close icon */
+#lbActvty .container-close{background:transparent url("https://www.paypalobjects.com/webstatic/i/ex_ce2/sprite/sprite_globalIcons.png") no-repeat scroll 0 -199px;}
+/* light-box loader and it's masking styles */
+#lbActvty_c .actloader{position:absolute;top:0;min-height:332px;width:539px;z-index:50003;}
+#lbActvty_c .actloader .lmask{background-color:#fff;opacity:0.9;min-height:332px;top:0;width:539px;border-radius:5px;box-shadow:0 0 10px 3px;z-index:50005;}
+#lbActvty_c .actloader .loader{color:#333;position:absolute;top:130px;left:188px;text-align:center;vertical-align:center;z-index:50007;}
+#lbActvty_c .actloader .loader p{display:block;margin-top:5px;}
+/* light-box buttons */
+#lbActvty .buttons{float:right;margin:5px 0 20px 0;}
+#lbActvty input.button {
+	font-size: 1.308em;
+	color: #292929;
+	font-weight: bold;
+	text-shadow:0px 1px 1px #aff4fe;
+	height: 40px;
+	padding: 0 45px;
+	border: solid #589093 1px;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	-moz-box-shadow: 0px 1px 1px #b2b2b2;
+	-webkit-box-shadow: 0px 1px 1px #b2b2b2;
+	box-shadow: 0px 1px 1px #b2b2b2;
+
+	background: #edfafa; /* Old browsers */
+	background: -moz-linear-gradient(top, #edfafa 0%, #edfafa 4%, #dbf7f7 5%, #6dd7d7 49%, #2cc4c4 50%, #51cece 51%, #3fbfbf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#edfafa), color-stop(4%,#edfafa), color-stop(5%,#dbf7f7), color-stop(49%,#6dd7d7), color-stop(50%,#2cc4c4), color-stop(51%,#51cece), color-stop(100%,#3fbfbf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #edfafa 0%,#edfafa 4%,#dbf7f7 5%,#6dd7d7 49%,#2cc4c4 50%,#51cece 51%,#3fbfbf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #edfafa 0%,#edfafa 4%,#dbf7f7 5%,#6dd7d7 49%,#2cc4c4 50%,#51cece 51%,#3fbfbf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #edfafa 0%,#edfafa 4%,#dbf7f7 5%,#6dd7d7 49%,#2cc4c4 50%,#51cece 51%,#3fbfbf 100%); /* IE10+ */
+	background: linear-gradient(top, #edfafa 0%,#edfafa 4%,#dbf7f7 5%,#6dd7d7 49%,#2cc4c4 50%,#51cece 51%,#3fbfbf 100%); /* W3C */
+	background-color:#51cece;
+}
+#lbActvty input.button:hover, #lbActvty input.button:focus {
+	cursor:pointer;
+	border: solid #84a8aa 1px;
+	 background-color:#dbf7f7;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 4%, #e3fbfb 5%, #97e8ea 49%, #6ddddf 50%, #7fe2e4 51%, #4fccd0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(4%,#ffffff), color-stop(5%,#e3fbfb), color-stop(49%,#97e8ea), color-stop(50%,#6ddddf), color-stop(51%,#7fe2e4), color-stop(100%,#4fccd0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 4%,#e3fbfb 5%,#97e8ea 49%,#6ddddf 50%,#7fe2e4 51%,#4fccd0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#ffffff 4%,#e3fbfb 5%,#97e8ea 49%,#6ddddf 50%,#7fe2e4 51%,#4fccd0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#ffffff 4%,#e3fbfb 5%,#97e8ea 49%,#6ddddf 50%,#7fe2e4 51%,#4fccd0 100%); /* IE10+ */
+	background: linear-gradieint(top, #ffffff 0%,#ffffff 4%,#e3fbfb 5%,#97e8ea 49%,#6ddddf 50%,#7fe2e4 51%,#4fccd0 100%); /* W3C */
+        background-color:#dbf7f7;
+}
+#lbActvty input.button:active {
+	border: solid #fff 1px;
+	position: relative;
+	top: 1px;
+	
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+	background: #84dbdc; /* Old browsers */
+	background: -moz-linear-gradient(top, #84dbdc 0%, #4fb0b6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84dbdc), color-stop(100%,#4fb0b6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #84dbdc 0%,#4fb0b6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #84dbdc 0%,#4fb0b6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #84dbdc 0%,#4fb0b6 100%); /* IE10+ */
+	background: linear-gradient(top, #84dbdc 0%,#4fb0b6 100%); /* W3C */
+	
+	-moz-box-shadow:inset 0px 2px 2px #007c8f;
+	-webkit-box-shadow:inset 0px 2px 2px #007c8f;
+	box-shadow:inset 0px 2px 2px #007c8f;
+}
+/*for Tooltip in Minipage*/
+ .yui-panel-container {
+    z-index: 5001 !important;
+}
+.balloonControl, .autoTooltip {
+    border-bottom: 1px dashed #084482;
+    text-decoration: none;
+}
+ 
+.autoTooltip {
+    cursor: pointer;
+}

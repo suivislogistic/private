@@ -1,0 +1,63 @@
+
+
+function hideShirasePopin(){
+	$("#popinShirase,#popinShirase_bg").remove();
+	shiraseRecordCoockie();
+}
+
+
+function resizeShirasePopin(){	
+
+	
+	scrollTop = $(window).scrollTop();
+	var popinH = $("#popinShirase").innerHeight();	
+	if(popinH > windowHeight){
+		popinTop = 0;
+		if(scrollTop > 0 && $rescroll == true) TweenLite.to(window, 0.1, {scrollTo:{y: 0, x:0}, ease:Power4.easeInOut});
+	}else{
+		popinTop = scrollTop + (windowHeight - $("#popinShirase").innerHeight()) / 2;
+	}	
+	popinLeft = ($("#popinShirase_bg").innerWidth() - $("#popinShirase").innerWidth()) / 2;		
+	$("#popinShirase").css("left",popinLeft + "px");
+	$("#popinShirase").css("top",popinTop + "px");	
+	$("#popinShirase_bg").css("top",scrollTop + "px");	
+
+
+}
+
+function shiraseRecordCoockie(){
+
+	var datas = {};
+	datas.action = 'shiraseRecordCoockie';
+	
+	$.ajax({
+      url: $_SITE_ROOT + "actions.php",
+      dataType: 'json',
+      data: datas,
+      type: 'POST',
+      success: function($datas){
+		  
+		},
+      error: function($datas){
+
+      }
+    });
+
+	
+}
+	
+$(window).scroll(resizeShirasePopin);
+$(document).bind('SIZE_CHANGED',resizeShirasePopin);
+
+$("#popinShirase_bg").click(hideShirasePopin);
+$("#popinShirase .btnClose").click(hideShirasePopin);
+$("#popinShirase .btn2").click(function(e) {
+    hideShirasePopin();
+	return false;
+});
+$("#popinShirase .btn1").click(function(e) {
+    hideShirasePopin();
+});
+
+shiraseRecordCoockie();
+
